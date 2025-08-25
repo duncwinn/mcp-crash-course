@@ -11,11 +11,12 @@ from mcp.client.stdio import stdio_client
 
 load_dotenv()
 
-llm = ChatOpenAI()
+#llm = ChatOpenAI()
+
 
 stdio_server_params = StdioServerParameters(
     command="python",
-    args=["/Users/edenmarco/GithubProjects/mcp-crash-course/servers/math_server.py"],
+    args=["/Users/duncanwinn/duncwinn-ai/langchain-mcp-adapters/servers/math_server.py"],
 )
 
 async def main():
