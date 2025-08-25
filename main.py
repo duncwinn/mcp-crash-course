@@ -12,7 +12,7 @@ from mcp.client.stdio import stdio_client
 load_dotenv()
 
 #llm = ChatOpenAI()
-
+llm = ChatOpenAI(base_url="http://localhost:11434/v1", api_key="ollama", model="llama3.1")
 
 stdio_server_params = StdioServerParameters(
     command="python",
@@ -25,6 +25,7 @@ async def main():
             await session.initialize()
             print("session initialized")
             tools = await load_mcp_tools(session)
+            print(tools)
 
 
             agent = create_react_agent(llm,tools)
